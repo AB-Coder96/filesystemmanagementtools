@@ -1,0 +1,2 @@
+python CreatnewWord.py
+pause
