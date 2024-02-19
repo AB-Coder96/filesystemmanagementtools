@@ -9,9 +9,8 @@ from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 # Directory where Word files are located
 source_directory = os.getcwd()
 print(source_directory)  # Corrected print statement
-
-Des = ['Araz B Karimi Resume Software UK', 'Araz B Karimi Resume Software US', 'Araz B Karimi Resume Power US',
-       'Araz B Karimi Resume Power UK', 'Guide']
+# enter the names of the files you want to include
+Des = ['','','']
 
 for des in Des:
     # List all Word files containing Des in their name
