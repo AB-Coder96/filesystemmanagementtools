@@ -19,7 +19,7 @@ for des in Des:
     print(word_files)
 
     # Sort the files by creation time (most recent first)
-    word_files.sort(key=lambda x: os.path.getctime(os.path.join(source_directory, x)), reverse=True)
+    word_files.sort(key=lambda x: datetime.strptime(x.split()[0], '%Y%m%d'), reverse=True)
     print(word_files)
 
     # Check if there are any matching Word files
