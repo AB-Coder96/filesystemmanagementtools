@@ -45,7 +45,7 @@ print(xlsx_files)
 i=0
 ii=0
 doc = Document()
-HD1='Appendix 2: Load Data Provided By Redstone Arsenal'
+HD1='xx'
 doc.add_heading(HD1, level=1)
 for file in xlsx_files:
     file_path = os.path.join(directory_path, file)
