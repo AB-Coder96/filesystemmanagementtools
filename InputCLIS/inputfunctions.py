@@ -1,28 +1,48 @@
 import openpyxl
-
-def get_column_values(file_path, column_name):
-    workbook = openpyxl.load_workbook(file_path)
-    sheet = workbook.active
-
-    # Assuming your data starts from the second row, adjust as needed
-    column_data = [sheet[column_name][i].value for i in range(2, sheet.max_row + 1)]
-
-    # Get unique values
-    unique_values = set(column_data)
-
-    return unique_values
-
-def select_from_list(options):
-    print("Select an option:")
-    for i, option in enumerate(options, start=1):
-        print(f"{i}. {option}")
-
-    while True:
-        try:
-            choice = int(input("Enter the number of your choice: "))
-            if 1 <= choice <= len(options):
-                return options[choice - 1]
-            else:
-                print("Invalid choice. Please enter a valid number.")
-        except ValueError:
-            print("Invalid input. Please enter a number.")
+from datetime import datetime 
+###############################
+def get_date_input(self):
+        while True:
+            try:
+                year = int(input("Enter the year: "))
+                month = int(input("Enter the month (1-12): "))
+                day = int(input("Enter the day of the month: "))
+                
+                # Check if the entered values form a valid date
+                datetime(year=year, month=month, day=day)
+                
+                # Combine the values into 'YYYY-MM-DD' format
+                date = f"{year:04d}-{month:02d}-{day:02d}"
+                return date
+            except ValueError:
+                print("Invalid input. Please enter valid numerical values.")
+def get_date_time_input():
+        while True:
+            try:
+                year = int(input("Enter the year: "))
+                month = int(input("Enter the month (1-12): "))
+                day = int(input("Enter the day of the month: "))
+                hour=int(input("Enter the hour of the day (0-23): "))
+                # Check if the entered values form a valid date
+                datetime(year=year, month=month, day=day, hour=hour)
+                
+                # Combine the values into 'YYYY-MM-DD' format
+                date = f"{year:04d}-{month:02d}-{day:02d} {hour:02d}:00:00"
+                return date
+            except ValueError:
+                print("Invalid input. Please enter valid numerical values.")
+def select_type(List):
+        for idx, List_type in enumerate(List, start=1):
+            print(f"{idx}. {List_type}")
+        
+        while True:
+            selection = input(f"Enter the number corresponding to the List type: ")
+            try:
+                selection = int(selection)
+                if 1 <= selection <= len(List):
+                    selected_type = List[selection - 1]
+                    return selected_type
+                else:
+                    print("Please enter a valid number from the list.")
+            except ValueError:
+                print("Please enter a valid number.")
