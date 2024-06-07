@@ -6,5 +6,6 @@ To make a copy of your important word file for each day you want to modify and u
 2. makes a pdf version of each Microsoft word file in the directory
 3. make a word with several jpgs created from bunch of excel files
 4. CLI input tools that can be used in creating any CLI applications
+5. join and lit big files into parts to easiy move across internet
 # To be completed
 - make files usable in the parent directory of this repo
